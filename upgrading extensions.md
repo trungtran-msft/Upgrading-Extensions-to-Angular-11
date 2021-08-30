@@ -1,4 +1,4 @@
-#Overview
+# Overview
 
 Upgrading each extension repo is the next step after we've verified that shell is in a ready state. The process is very similar and this guide will outline the general steps.
 
