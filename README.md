@@ -18,7 +18,8 @@ Windows Admin Center is upgrading to Angular 11.0! This brings in the latest in 
 ## Upgrade
 
 6. At the root level of the repo, run `wac upgrade --audit=false --experimental`.
-a. If working on an extension repository that is consumed by other extensions, include the `--library` flag as well.
+    
+    a. If working on an extension repository that is consumed by other extensions, include the `--library` flag as well.
     
     If the library flag was used, edit the `name` property in `src/package.json` to something unique to the extension.
 
