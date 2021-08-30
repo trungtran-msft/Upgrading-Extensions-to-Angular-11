@@ -38,7 +38,7 @@ Also be sure to specify the '/dist' folder level on any imports from extensions,
 - **NG6002: Appears in the NgModule.imports of AppModule, but could not be resolved to an NgModule class**
 This type of error occurs at build time, typically before the upgraded repository has been successfully built at least once. To resolve, run "ng serve --prod", after which these errors should no longer appear when building.
 
-- ![image.png](/.attachments/image-caed7de1-29f0-47fe-ba03-326fef78a31d.png)
+- ![image.png](./error.png)
 This error occurs during the inlineCompile step of "gulp build" and occurs as the result of a mismatch in versions between the @types/jasmine package downloaded and what the @types/jasminewd2 package requires. This can be resolved by removing the @types/jasminewd2 package (if possible, otherwise a different solution should be found and documented).
 
 
