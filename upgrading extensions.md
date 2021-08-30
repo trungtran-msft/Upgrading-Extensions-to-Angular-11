@@ -6,7 +6,7 @@ Upgrading each extension repo is the next step after we've verified that shell i
 
 0. Create a `features/ng11` branch in the repo. [Recommended]
 1. Update `version.json` version to `(N+1).0.0`. At time of writing we'll be updating from 1.x.x to 2.0.0.
-2. In a Powershell console, make sure to switch to the respective Node version ([Working with two branches of shell](/Working-with-two-branches-of-shell?anchor=switching-development-environments) - At time of writing `nvm use 12.18.3`). Close the terminal for this change to take effect.
+2. In a Powershell console, make sure to switch to the respective Node version ([Working with two branches of shell](./Working-with-two-branches-of-shell.md) - At time of writing `nvm use 12.18.3`). Close the terminal for this change to take effect.
 3. Cleanup `node_modules` folder to avoid npm conflicts.
 
 # Automated process
