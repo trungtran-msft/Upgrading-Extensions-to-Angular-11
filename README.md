@@ -4,7 +4,7 @@ Windows Admin Center is upgrading to Angular 11.0! This brings in the latest in 
 
 # Preliminary steps
 
-0. Install the latest version of Windows Admin Center in dev mode ('msiexec /i WindowsAdminCenter<version>.msi DEV_MODE=1') with the upgraded shell. Please reach out to your Microsoft contact if this has not been provided to you.
+0. Install the latest version of Windows Admin Center in dev mode (`msiexec /i WindowsAdminCenter<version>.msi DEV_MODE=1`) with the upgraded shell. Please reach out to your Microsoft contact if this has not been provided to you.
 1. Create a `features/ng11` branch in the repo. [Recommended]
 2. Update `version.json` version to `(N+1).0.0`. [Recommended]
 3. In a Powershell console, make sure to switch to the respective Node version ([Working with two branches of shell](./Working-with-two-branches-of-shell.md) - At time of writing `nvm use 12.18.3`). Close the terminal for this change to take effect.
