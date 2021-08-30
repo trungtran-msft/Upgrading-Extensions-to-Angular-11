@@ -12,19 +12,21 @@ Upgrading each extension repo is the next step after we've verified that shell i
 # Automated process
 ## Prerequisites
 
-5. Download and install WAC CLI tools by running `npm install -g @microsoft/windows-admin-center-sdk@experimental` if you have not already done so 
+4. Download and install WAC CLI tools by running `npm install -g @microsoft/windows-admin-center-sdk@experimental` if you have not already done so 
 
 ## Upgrade
 
-6. At the root level of the repo, run `wac upgrade --audit=false --experimental` (Note: If upgrading an extension that uses the SDK, perform step 6.b.ii. first).
+5. At the root level of the repo, run `wac upgrade --audit=false --experimental`.
 a. If working on an extension repository that is consumed by other extensions, include the `--library` flag as well.
-____i. If the library flag was used, edit the `name` property in `src/package.json` to something unique to the extension.
+    
+    If the library flag was used, edit the `name` property in `src/package.json` to something unique to the extension.
 
-7. There will likely be unresolved errors returned, these will either need to be resolved here or during the [Build steps](/Upgrading-extensions?anchor=build-steps) section below. Once ready, proceed to Build steps.
-8. [Conditional] If the extension repo has dependencies on any other extension package, you will have to manually pick the new angular version for that one (e.g. `msft-sme-certificate-manager` has a dependency on `msft-sme-event-viewer`. The automated tools will **not** update `msft-sme-event-viewer` version, it has to be manually updated.)
+
+6. [Conditional] If the extension repo has dependencies on any other extension package, you will have to manually pick the new angular version for that one (e.g. `msft-sme-certificate-manager` has a dependency on `msft-sme-event-viewer`. The automated tools will **not** update `msft-sme-event-viewer` version, it has to be manually updated.)
 Also be sure to specify the '/dist' folder level on any imports from extensions, any lower or higher level imports won't work (e.g. `import { foobar } from '@msft-sme/event-viewer'` would need to be changed to `import { foobar } from '@msft-sme/event-viewer/dist'`.) 
-9. Open `app-routing.module.ts` and change any appRoutes that have the format `./folder-name/file-name#ModuleClass` to `() => import('./folder-name/file-name').then(m => m.ModuleClass)`. If there are any other `routing.module.ts` files they will also need to be updated in this way.
-10. Remove `UpgradeAudit.txt` file. It's auto-generated for your reference but doesn't need to go in the repo.
+7. Open `app-routing.module.ts` and change any appRoutes that have the format `./folder-name/file-name#ModuleClass` to `() => import('./folder-name/file-name').then(m => m.ModuleClass)`. If there are any other `routing.module.ts` files they will also need to be updated in this way.
+8. Remove `UpgradeAudit.txt` file. It's auto-generated for your reference but doesn't need to go in the repo.
+9. There will likely be unresolved errors returned. Proceed to Build steps.
 
 # Build steps
 1. At this point the extension repo is ready to be built. Run `gulp build`
