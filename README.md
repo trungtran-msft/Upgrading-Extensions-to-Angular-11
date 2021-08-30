@@ -1,6 +1,6 @@
 # Overview
 
-Windows Admin Center is upgrading to Angular 11.0! This brings in the latest in features, security, and performance, and we're excited to have this available for you. So far, the shell of Windows Admin Center has been upgraded and it is your turn to update your version. Follow the steps in this document to get your extension updated.
+Windows Admin Center is upgrading to Angular 11.0! This brings in the latest in features, security, and performance, and we're excited to have this available for you. So far, the shell of Windows Admin Center has been upgraded and it is your turn to update your extensions. Follow the steps in this document to get your extension updated.
 
 # Preliminary steps
 
@@ -59,3 +59,9 @@ This error occurs during the inlineCompile step of "gulp build" and occurs as th
 2. Create a PR from the features/ng11 branch into main
 3. When ready, please complete the PR. 
 4. Congratulations, you just successfully upgraded an extension!
+
+# Support
+1. If you run into any issues, please reach out to your Microsoft contact and they will route your request
+    
+# Release
+1. Once your extension has been tested in desktop and service mode, send an email to wacextensionrequest@microsoft.com to have it released with our next GA
