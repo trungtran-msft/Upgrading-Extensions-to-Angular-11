@@ -28,7 +28,13 @@ Windows Admin Center is upgrading to Angular 11.0! This brings in the latest in 
 Also be sure to specify the '/dist' folder level on any imports from extensions, any lower or higher level imports won't work (e.g. `import { foobar } from '@msft-sme/event-viewer'` would need to be changed to `import { foobar } from '@msft-sme/event-viewer/dist'`.) 
 8. Open `app-routing.module.ts` and change any appRoutes that have the format `./folder-name/file-name#ModuleClass` to `() => import('./folder-name/file-name').then(m => m.ModuleClass)`. If there are any other `routing.module.ts` files they will also need to be updated in this way.
 9. Remove `UpgradeAudit.txt` file. It's auto-generated for your reference but doesn't need to go in the repo.
-10. There will likely be unresolved errors returned. Proceed to Build steps.
+10. Go through the following files and replace all instances of `@msft-sme` with `@microsoft/windows-admin-center-sdk`:
+- `./angular.json`
+- `./gulpfile.ts/common/e2e.ts`
+- `./gulpfile.ts/common/resjson.ts`
+- `./src/polyfills.ts`
+- `./src/test.ts`
+11. There will likely be unresolved errors returned. Proceed to Build steps.
 
 # Build steps
 1. At this point the extension repo is ready to be built. Run `gulp build`
